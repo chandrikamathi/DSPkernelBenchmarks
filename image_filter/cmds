@@ -1,0 +1,12 @@
+g++ `pkg-config --cflags opencv` -fopenmp -o hello imFilter.cpp `pkg-config --libs opencv`
+
+
+./hello baboon.jpg mean
+
+imfilter-parallel-with no initial parallelism-with img display
+max threads is 4Stats[0] = 67324Stats[1] = 65280Stats[2] = 65280Stats[3] = 64260
+Operations = 262144, time = 0.005857, ops = 44757454.521534
+
+imfilter-parallel-with no initial parallelism-without img display
+max threads is 4Stats[0] = 67324Stats[1] = 65280Stats[2] = 65280Stats[3] = 64260
+Operations = 262144, time = 0.006100, ops = 42974853.538245

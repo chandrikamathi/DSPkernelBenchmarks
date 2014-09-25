@@ -1,0 +1,18 @@
+~$sftp pca-2014-10@phi.hcs.ufl.edu
+password: 99presii3
+sftp> lcd <our local folder> 
+sftp> put <filename>
+
+
+~$ssh -l pca-2014-10 phi.hcs.ufl.edu 
+password: 99presii3
+for compiling-
+icc -o <...o file> -openmp filename.c -lm -mmic
+ssh mic0
+mic0>scp /opt/xeon-phi/mic-lib/libiomp5.so mic0:/tmp
+mic0>export OMP_NUM_THREADS=#
+mic0>export KM_AFFINITY=compact
+mic0>export LD_LIBRARY_PATH=/tmp
+
+Testing:
+mic0>./output file name <vars>
